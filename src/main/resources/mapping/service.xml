@@ -6,5 +6,4 @@
         SELECT service_name FROM market_service WHERE id = #{id}
     </select>
 
-
 </mapper>
