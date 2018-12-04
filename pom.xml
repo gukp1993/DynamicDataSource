@@ -7,7 +7,7 @@
   
   <properties>
   	<org.springframework.version>4.2.8.RELEASE</org.springframework.version>
-  	<junit.version>4.11</junit.version>
+  	<junit.version>4.10</junit.version>
   </properties>
   
   <dependencies>

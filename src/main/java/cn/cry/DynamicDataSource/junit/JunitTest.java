@@ -35,6 +35,11 @@ public class JunitTest {
   
   @Resource
   private IDynamicDataSourceDao dynamicDataSourceDao;
+
+  @Test
+  public void hello(){
+    System.out.println("hello world");
+  }
   
   @Ignore
   @Test
