@@ -23,12 +23,13 @@ public class MybatisTest extends JunitTest {
         System.out.println(serviceDao.getServiceNameById(123L));
     }
 
-    @Ignore
+//    @Ignore
     @Test
     public void getServiceNameByFwsPinAndId() {
         serviceDao.getServiceNameByFwsPinAndId("gkp", 123L);
     }
 
+    @Ignore
     @Test
     public void getServiceNameBy3Params(){
         System.out.println(serviceDao.getServiceNameBy3Params("gkp",123L,"FW_GOODS-123"));
