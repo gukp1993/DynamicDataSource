@@ -16,7 +16,7 @@ import com.alibaba.fastjson.JSON;
 public class LogAspect {
   private final static ILoggerFactory loggerFactory=LoggerFactory.getILoggerFactory();
   
-  @Around("execution(* cn.cry..dao.*.*(..))")
+//  @Around("execution(* cn.cry..dao.*.*(..))")
   public Object log(ProceedingJoinPoint pjp) throws Throwable{
     //目标方法方法签名
     Signature signature=pjp.getSignature();
