@@ -8,4 +8,8 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface ServiceDao {
     String getServiceNameById(Long id);
+
+    String getServiceNameByFwsPinAndId(String fwsPin, Long id);
+
+    String getServiceNameBy3Params(@Param("a")String fwsPin, @Param("b") Long id, @Param("c") String serviceCode);
 }

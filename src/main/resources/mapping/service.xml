@@ -6,4 +6,18 @@
         SELECT service_name FROM market_service WHERE id = #{id}
     </select>
 
+    <select id="getServiceNameByFwsPinAndId" resultType="string">
+        SELECT service_name FROM market_service WHERE fws_pin = #{0} AND id = #{1}
+    </select>
+
+    <!-- 基本参数传参
+        1.与入参顺序对应，#{0}代表第一个位置的索引，#{1}代表第二个位置的索引,依此类推
+        2.与入参顺序对应，#{param1}代表第一个位置的索引，#{param2}代表第二个位置的索引，依此类推
+        3.入参使用@Param注解，注解指定的名字即为xml中使用的参数名
+        （如果没有正确绑定，mybatis会报错，并提示Available parameters are [0, 1, 2, param3, param1, param2]）
+    -->
+    <select id="getServiceNameBy3Params" resultType="string">
+        SELECT service_name FROM market_service WHERE fws_pin = #{a} AND id = #{b} AND service_code = #{c}
+    </select>
+
 </mapper>
