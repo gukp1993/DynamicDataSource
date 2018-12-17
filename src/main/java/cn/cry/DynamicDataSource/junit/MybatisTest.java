@@ -1,6 +1,7 @@
 package cn.cry.DynamicDataSource.junit;
 
 import cn.cry.DynamicDataSource.dao.ServiceDao;
+import cn.cry.DynamicDataSource.domain.ServiceRequest;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -23,7 +24,7 @@ public class MybatisTest extends JunitTest {
         System.out.println(serviceDao.getServiceNameById(123L));
     }
 
-//    @Ignore
+    @Ignore
     @Test
     public void getServiceNameByFwsPinAndId() {
         serviceDao.getServiceNameByFwsPinAndId("gkp", 123L);
@@ -33,5 +34,14 @@ public class MybatisTest extends JunitTest {
     @Test
     public void getServiceNameBy3Params(){
         System.out.println(serviceDao.getServiceNameBy3Params("gkp",123L,"FW_GOODS-123"));
+    }
+
+    @Test
+    public void getServiceNameByJavaBean(){
+        ServiceRequest request = new ServiceRequest();
+        request.setFwsPin("gkp");
+        request.setId(123L);
+        request.setServiceCode("FW_GOODS-123");
+        System.out.println(serviceDao.getServiceNameByRequest(request));
     }
 }

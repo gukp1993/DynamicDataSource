@@ -20,4 +20,13 @@
         SELECT service_name FROM market_service WHERE fws_pin = #{a} AND id = #{b} AND service_code = #{c}
     </select>
 
+    <!-- 对象传参
+        1.不指定@Param注解，使用#{属性名}
+        2.指定@Param注解，使用#{注解名.属性名}
+        3.指定@Param注解，使用#{param1.属性名}
+    -->
+    <select id="getServiceNameByRequest" parameterType="cn.cry.DynamicDataSource.domain.ServiceRequest" resultType="string">
+        SELECT service_name FROM market_service WHERE fws_pin = #{param1.fwsPin} AND id = #{param1.id} AND service_code = #{param1.serviceCode}
+    </select>
+
 </mapper>

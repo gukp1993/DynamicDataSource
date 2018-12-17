@@ -14,5 +14,5 @@ public interface ServiceDao {
 
     String getServiceNameBy3Params(@Param("a")String fwsPin, @Param("b") Long id, @Param("c") String serviceCode);
 
-    String getServiceNameByRequest(ServiceRequest request);
+    String getServiceNameByRequest(@Param("request") ServiceRequest request);
 }
