@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import java.util.Arrays;
 
 /**
+ * 参数转换 MethodSignature类的convertArgsToSqlCommandParam方法
  * 1.单个入参（非java对象）：java接口中不使用@Param注解，xml中随意命名；接口中使用@Param注解，xml中必须使用@Param注解定义的名字或者param1
  *
  * @author gukepeng
