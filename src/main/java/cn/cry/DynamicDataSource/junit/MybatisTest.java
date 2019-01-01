@@ -6,6 +6,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 
 /**
  * 1.单个入参（非java对象）：java接口中不使用@Param注解，xml中随意命名；接口中使用@Param注解，xml中必须使用@Param注解定义的名字或者param1
@@ -36,6 +37,7 @@ public class MybatisTest extends JunitTest {
         System.out.println(serviceDao.getServiceNameBy3Params("gkp",123L,"FW_GOODS-123"));
     }
 
+    @Ignore
     @Test
     public void getServiceNameByJavaBean(){
         ServiceRequest request = new ServiceRequest();
@@ -43,5 +45,18 @@ public class MybatisTest extends JunitTest {
         request.setId(123L);
         request.setServiceCode("FW_GOODS-123");
         System.out.println(serviceDao.getServiceNameByRequest(request));
+    }
+
+    @Test
+    public void listServiceNameByFwsPins(){
+        System.out.println(serviceDao.listServiceNameByFwsPins(Arrays.asList("gkp","gkp")));
+    }
+
+    @Ignore
+    @Test
+    public void listServiceNameByJavaBean(){
+        ServiceRequest request = new ServiceRequest();
+        request.setFwsPin("gkp");
+        System.out.println(serviceDao.listServiceNameByRequest(Arrays.asList(request,request)));
     }
 }

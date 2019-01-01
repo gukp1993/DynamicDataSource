@@ -29,4 +29,19 @@
         SELECT service_name FROM market_service WHERE fws_pin = #{param1.fwsPin} AND id = #{param1.id} AND service_code = #{param1.serviceCode}
     </select>
 
+    <!-- list传递参数，collection属性默认list（使用@Param注解，则为注解名或者param1）,item自定名字，#{item}（如果是对象，#{item.属性名}） -->
+    <select id="listServiceNameByFwsPins" parameterType="list" resultType="string">
+        SELECT service_name FROM market_service WHERE fws_pin IN
+        <foreach collection="list" item="fwsPin" open="(" separator="," close=")">
+            #{fwsPin}
+        </foreach>
+    </select>
+
+    <select id="listServiceNameByRequest" parameterType="list" resultType="string">
+        SELECT service_name FROM market_service WHERE fws_pin IN
+        <foreach collection="list" item="request" open="(" separator="," close=")">
+            #{request.fwsPin}
+        </foreach>
+    </select>
+
 </mapper>
